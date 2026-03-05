@@ -30,8 +30,8 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
 	
 <head> 
 	<title>Hello World</title>  <!--header for the page!-->
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="viewport" content="width=device-width, initial-scale=1"> <!--formatting-->
+	<meta name="apple-mobile-web-app-capable" content="yes"> <!--formatting that helps this work on an iPhone-->
 	<link rel="stylesheet" href="w3.css">
 	<link rel="stylesheet" href="w3-colors-flat.css">
 </head>
@@ -42,12 +42,12 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
   var dehydration_count = 0; //variable for counting symptoms that indicate dehydration 
         var hypoglycemia_count = 0; //variable for counting symptoms that indicate low blood sugar (aka hypoglycemia) 
 
-        function dehydrationAdd(){
+        function dehydrationAdd(){ //function that adds a count to each time that they select an option that is a dehydration symptom
            dehydration_count = dehydration_count + 1; //function to count dehydration symptoms
 
         }
 
-        function hypoglycemiaAdd(){
+        function hypoglycemiaAdd(){ //function that adds a count for hypoglycemia 
             hypoglycemia_count = hypoglycemia_count + 1; //function to count hypoglycemia symptoms
         }
 
@@ -65,11 +65,11 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
 <!-- THIS STYLE CODE HELPS MAKE YOUR APP LOOK GOOD. PROBABLY DONT MESS WITH IT -->
 <style>	
 .body {
-     margin: 0em;
+     margin: 0em; 
 }
 
 .page {
-    width: 100vw;
+    width: 100vw; /*this line and everything below is for formatting purposes*/
     height: 100vh;
     position: fixed;
     top: 0;
@@ -84,11 +84,11 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
     z-index: 1;
 
 }
-       	img, object{
+       	img, object{ /*added information for formatting, for resizable image*/
             	max-height:90%;
         		max-width:90%;
-				height: auto;
-				width: auto;
+				height: auto; /*suggested for auto resizing*/
+				width: auto; /*suggested for auto resizing*/
         	}
 </style>
 
@@ -99,7 +99,7 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
 </div>
 	
 <div id="content" class="w3-container"> 
-	<p>Are you wondering if you're dehydrated or if you have low blood sugar (hypoglycemia)? Answer a few short questions to find out!</p> 
+	<p>Are you wondering if you're dehydrated or if you have low blood sugar (hypoglycemia)? Answer a few short questions to find out!</p> <!--text for additional information-->
 	
 	<a href="#one" class="w3-btn w3-grey w3-round"> Get Started </a> <!--add a button to get started, direct to next page-->
 	
