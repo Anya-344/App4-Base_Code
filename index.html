@@ -38,24 +38,24 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
 
 <script>
 //entire section has been copied in directly from app 3-cold or allergy
-  var allergy_count = 0; //variable for counting symptoms that indicate allergies 
-        var cold_count = 0; //variable for counting symptoms that indicate a cold 
+  var dehydration_count = 0; //variable for counting symptoms that indicate dehydration 
+        var hypoglycemia_count = 0; //variable for counting symptoms that indicate low blood sugar (aka hypoglycemia) 
 
-        function allergyAdd(){
-            allergy_count = allergy_count + 1; //function to count allergy symptoms
+        function dehydrationAdd(){
+           dehydration_count = dehydration_count + 1; //function to count dehydration symptoms
 
         }
 
-        function coldAdd(){
-            cold_count = cold_count + 1; //function to count cold symptoms
+        function hypoglycemiaAdd(){
+            hypoglycemia_count = hypoglycemia_count + 1; //function to count hypoglycemia symptoms
         }
 
 		function calculateResults(){
-			var allergyPercent = (allergy_count / 6) * 100; //calculation
-			var coldPercent = (cold_count / 6) * 100; //calculation
+			var dehydrationPercent = (dehydration_count / 6) * 100; //calculation for dehydration percentage chance 
+			var hypoglycemiaPercent = (hypoglycemia_count / 6) * 100; //calculation for hypoglycemia percentage chance 
 			var resultElement = document.getElementById("results_display"); //display results of the calculation
 
-			resultElement.innerHTML = "Probability it is allergies = " + allergyPercent + "%<br>" + "Probability it is a cold = " + coldPercent + "%"; //show text
+			resultElement.innerHTML = "Probability it is dehydration = " + dehydrationPercent + "%<br>" + "Probability it is a hypoglycemia = " + hypoglycemiaPercent + "%"; //show text
 		} //adding this bracket to resolve an error
 	
 </script>	
@@ -110,11 +110,11 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
 	
 <body> <!--entire code below copied in from app 3 -cold or allergy, edited to fit my choice of diagnostic-->
 <div id="header" class="w3-container w3-flat-carrot">
-	<h1>Cold or Allergies?</h1> <!--header for title page-->
+	<h1>Dehydration or Hypoglycemia?</h1> <!--header for title page-->
 </div>
 	
 <div id="content" class="w3-container"> 
-	<p>Are you feeling like you might have a cold but wonder if it is allergies. Answer a few short questions to find out!</p> 
+	<p>Are you wondering if you're dehydrated or if you have low blood sugar (hypoglycemia)? Answer a few short questions to find out!</p> 
 	
 	<a href="#one" class="w3-btn w3-grey w3-round"> Get Started </a> <!--add a button to get started, direct to next page-->
 	
@@ -129,9 +129,9 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
 	</div>
 	
     	<div id="content" class="w3-container">
-        <p>Are your eyes watery or itchy?</p> <!--question heading-->    
-				<a href="#two" onclick="allergyAdd();" class="w3-btn w3-grey w3-round"> Yes </a>  <!--button that directs to the following page-->
-				<a href="#two" onclick="coldAdd();" class="w3-btn w3-grey w3-round"> No </a> <!--button that directs to the following page-->
+        <p>Are you experiencing extreme hunger?</p> <!--question heading-->    
+				<a href="#two" onclick="dehydrationAdd();" class="w3-btn w3-grey w3-round"> No </a>  <!--button that directs to the following page-->
+				<a href="#two" onclick="hypoglycemiaAdd();" class="w3-btn w3-grey w3-round"> Yes </a> <!--button that directs to the following page-->
     	</div>
 	
 </div>
@@ -142,9 +142,9 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
 	</div>
 	
 	<div id="content" class="w3-container">
-		<p>Do you have a fever?</p>
-		<a href="#three" onclick="coldAdd();" class="w3-btn w3-grey w3-round"> Yes </a>  <!--button that directs to the following page-->
-		<a href="#three" onclick="allergyAdd();" class="w3-btn w3-grey w3-round"> No </a> <!--button that directs to the following page-->
+		<p>Are you experiencing extreme thirst?</p>
+		<a href="#three" onclick="dehydrationAdd();" class="w3-btn w3-grey w3-round"> Yes </a>  <!--button that directs to the following page-->
+		<a href="#three" onclick="hypoglycemiaAdd();" class="w3-btn w3-grey w3-round"> No </a> <!--button that directs to the following page-->
 
 	</div>
 </div>	
@@ -156,9 +156,9 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
 	</div>
 	
     	<div id="content" class="w3-container">
-        <p>Do you have a sore throat?</p>    
-			<a href="#four" onclick="coldAdd();" class="w3-btn w3-grey w3-round"> Yes </a>  <!--button that directs to the following page-->
-			<a href="#four" onclick="allergyAdd();" class="w3-btn w3-grey w3-round"> No </a> <!--button that directs to the following page-->
+        <p>Do you have a headache?</p>    
+			<a href="#four" onclick="dehydrationAdd();" class="w3-btn w3-grey w3-round"> Yes </a>  <!--button that directs to the following page-->
+			<a href="#four" onclick="hypoglycemiaAdd();" class="w3-btn w3-grey w3-round"> No </a> <!--button that directs to the following page-->
     	</div>
 	
 </div>
@@ -169,9 +169,9 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
 	</div>
 	
     	<div id="content" class="w3-container">
-        <p>Are your symptoms seasonal or chronic?</p> 
-			<a href="#five" onclick="allergyAdd();" class="w3-btn w3-grey w3-round"> Yes </a>  <!--button that directs to the following page-->
-			<a href="#five" onclick="coldAdd();" class="w3-btn w3-grey w3-round"> No </a>  <!--button that directs to the following page-->
+        <p>Are you shaking or trembling?</p> 
+			<a href="#five" onclick="hypoglycemiaAdd();" class="w3-btn w3-grey w3-round"> Yes </a>  <!--button that directs to the following page-->
+			<a href="#five" onclick="dehydrationAdd();" class="w3-btn w3-grey w3-round"> No </a>  <!--button that directs to the following page-->
 
     	</div>
 	
@@ -183,9 +183,9 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
 	</div>
 	
     	<div id="content" class="w3-container">
-        <p>Are you experiencing any body aches?</p>    
-			<a href="#six" onclick="coldAdd();" class="w3-btn w3-grey w3-round"> Yes </a>  <!--button that directs to the following page-->
-			<a href="#six" onclick="allergyAdd();" class="w3-btn w3-grey w3-round"> No </a> <!--button that directs to the following page-->
+        <p>Are you sweating?</p>    
+			<a href="#six" onclick="hypoglycemiaAdd();" class="w3-btn w3-grey w3-round"> Yes </a>  <!--button that directs to the following page-->
+			<a href="#six" onclick="dehydrationAdd();" class="w3-btn w3-grey w3-round"> No </a> <!--button that directs to the following page-->
     	</div>
 	
 </div>
@@ -196,9 +196,9 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
 	</div>
 	
     	<div id="content" class="w3-container">
-        <p>Are you experiencing chills?</p>    
-			<a href="#seven" onclick="coldAdd();" class="w3-btn w3-grey w3-round"> Yes </a>  <!--button that directs to the following page-->
-			<a href="#seven" onclick="allergyAdd();" class="w3-btn w3-grey w3-round"> No </a> <!--button that directs to the following page-->
+        <p>Is your mouth excessively dry?</p>    
+			<a href="#seven" onclick="dehydrationAdd();" class="w3-btn w3-grey w3-round"> Yes </a>  <!--button that directs to the following page-->
+			<a href="#seven" onclick="hypoglycemiaAdd();" class="w3-btn w3-grey w3-round"> No </a> <!--button that directs to the following page-->
     	</div>
 	
 </div>
